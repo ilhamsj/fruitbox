@@ -43,7 +43,7 @@ const Sidebar = () => {
   const menuList = (data) => {
     console.log(data)
     return data.map((val, key) => {
-      return <SidebarMain data={val}/>
+      return <SidebarMain data={val} key={key}/>
     })
   };
 
