@@ -5,9 +5,6 @@ import face4 from '../Template/images/faces/face4.jpg';
 import face2 from '../Template/images/faces/face2.jpg';
 import face3 from '../Template/images/faces/face3.jpg';
 import face5 from '../Template/images/faces/face5.jpg';
-import '../Template/vendors/mdi/css/materialdesignicons.min.css'
-import '../Template/vendors/base/vendor.bundle.base.css'
-import '../Template/css/style.css'
 
 const Header = () => {
   return (
