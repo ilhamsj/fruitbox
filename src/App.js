@@ -1,7 +1,7 @@
 import React from 'react'
-import './Template/css/style.css'
-import './Template/vendors/base/vendor.bundle.base.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './Template/vendors/mdi/css/materialdesignicons.min.css'
+import './Template/css/style.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 import Header from './Components/Header';
