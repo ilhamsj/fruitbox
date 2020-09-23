@@ -12,37 +12,9 @@ const SidebarMain = (props) => {
   );
 }
 
-const Sidebar = () => {
-  var menu = [
-    {
-      title: 'Dashboard',
-      route: '/',
-      icon: 'mdi mdi-home menu-icon'
-    },
-    {
-      title: 'Categories',
-      route: '/',
-      icon: 'mdi mdi-table menu-icon'
-    },
-    {
-      title: 'Product',
-      route: '/product',
-      icon: 'mdi mdi-table menu-icon'
-    },
-    {
-      title: 'Supplier',
-      route: '/',
-      icon: 'mdi mdi-table menu-icon'
-    },
-    {
-      title: 'Order Management',
-      route: '/',
-      icon: 'mdi mdi-database menu-icon'
-    },
-  ];
+const Sidebar = (props) => {
 
   const menuList = (data) => {
-    console.log(data)
     return data.map((val, key) => {
       return <SidebarMain data={val} key={key}/>
     })
@@ -51,7 +23,7 @@ const Sidebar = () => {
   return (
     <nav className="sidebar sidebar-offcanvas" id="sidebar">
       <ul className="nav">
-        { menuList(menu) }
+        { menuList(props.menu) }
         <li className="nav-item">
           <a className="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
             <i className="mdi mdi-settings menu-icon"></i>

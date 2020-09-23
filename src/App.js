@@ -9,8 +9,8 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import Header from './Components/Header';
 import Sidebar from './Components/Sidebar';
 import Footer from './Components/Footer';
-import Categories from './Components/Categories/Index';
-import Product from './Components/Product/Index';
+
+import { sidebar } from './Router/Route';
 
 const App = () => {
 
@@ -19,12 +19,15 @@ const App = () => {
       <div className="container-scroller">
         <Header/>
         <div className="container-fluid page-body-wrapper">
-          <Sidebar/>
+          <Sidebar menu={sidebar}/>
           <div className="main-panel">
             <div className="content-wrapper">
               <Switch>
-                <Route exact path ={["/"]} component={ Categories }/>
-                <Route exact path ={["/product"]} component={ Product }/>
+                {
+                  sidebar.map((val, key) => (
+                    <Route exact path ={val.route} component={ val.component } key={key}/>
+                  ))
+                }
               </Switch>
             </div>
             <Footer/>

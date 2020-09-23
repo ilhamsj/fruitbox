@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function Index() {
+function Index() {
     return (
         <div>
-            Product lists
+            Merchant lists
         </div>
     )
 }
+
+export default Index

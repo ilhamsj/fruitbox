@@ -7,22 +7,22 @@ import face3 from '../Template/images/faces/face3.jpg';
 import face5 from '../Template/images/faces/face5.jpg';
 
 const Header = () => {
-    const iconOnly = () => {
+    const toggleSidebar = () => {
         document.body.classList.toggle('sidebar-icon-only')
     }
     return (
         <nav className="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div className="navbar-brand-wrapper d-flex justify-content-center">
                 <div className="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
-                <a className="navbar-brand brand-logo" href="/">
-                    <img src={logo} alt="logo"/>
-                </a>
-                <a className="navbar-brand brand-logo-mini" href="/">
-                    <img src={logoMini} alt="logo"/>
-                </a>
-                <button className="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize" onClick={iconOnly}>
-                    <span className="mdi mdi-sort-variant"></span>
-                </button>
+                    <a className="navbar-brand brand-logo" href="/">
+                        <img src={logo} alt="logo"/>
+                    </a>
+                    <a className="navbar-brand brand-logo-mini" href="/">
+                        <img src={logoMini} alt="logo"/>
+                    </a>
+                    <button className="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize" onClick={toggleSidebar}>
+                        <span className="mdi mdi-sort-variant"></span>
+                    </button>
                 </div>  
             </div>
             <div className="navbar-menu-wrapper d-flex align-items-center justify-content-end">

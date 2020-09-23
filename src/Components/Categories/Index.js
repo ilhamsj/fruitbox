@@ -28,29 +28,25 @@ const Index = () => {
     
     return (
         <div className="row">
-            <div className="col-md-12 stretch-card">
-            <div className="card">
-                <div className="card-body">
-                <p className="card-title">Recent Purchases</p>
-                <div className="table-responsive">
-                    <table id="recent-purchases-listing" className="table">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Status report</th>
-                            <th>Office</th>
-                            <th>Price</th>
-                            <th>Date</th>
-                            <th>Gross amount</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        { listData(categories) }
-                    </tbody>
-                    </table>
+            <div className="col-md-6">
+                <div className="card">
+                    <div className="card-body">
+                        <p className="card-title">Category</p>
+                        <div className="table-responsive">
+                            <table id="recent-purchases-listing" className="table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    { listData(categories) }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-                </div>
-            </div>
             </div>
         </div>
     )
