@@ -1,12 +1,13 @@
 import React from 'react'
+import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
 
 const SidebarMain = (props) => {
   return (
     <li className="nav-item">
-    <a className="nav-link" href={props.data.route}>
-      <i className={props.data.icon}></i>
-      <span className="menu-title">{ props.data.title }</span>
-    </a>
+    <Link to={props.data.route} className="nav-link">
+        <i className={props.data.icon}></i>
+        <span className="menu-title">{ props.data.title }</span>
+    </Link>
   </li>
   );
 }
@@ -25,7 +26,7 @@ const Sidebar = () => {
     },
     {
       title: 'Product',
-      route: '/',
+      route: '/product',
       icon: 'mdi mdi-table menu-icon'
     },
     {
