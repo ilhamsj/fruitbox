@@ -2,11 +2,12 @@ import Categories from '../Components/Categories/Index';
 import Product from '../Components/Product/Index';
 import Supplier from '../Components/Supplier/Index';
 import Order from '../Components/Order/Index';
+import Dashboard from '../Components/Dashboard';
 
 const sidebar = [
     {
       title: 'Dashboard',
-      component: Categories,
+      component: Dashboard,
       route: '/',
       icon: 'mdi mdi-home menu-icon'
     },
