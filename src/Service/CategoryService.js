@@ -5,25 +5,25 @@ const getAll = () => {
 }
 
 const getById = id => {
-    return http.get(`/categories/${id}`)
+    return http.get(`/api/v1/categories/${id}`)
 }
 
-const storeData = data => {
-    return http.post(`/categories`, data)
+const postData = data => {
+    return http.post(`/api/v1/categories`, data)
 }
 
 const updateData = (id, data) => {
-    return http.put(`/categories/${id}`, data)
+    return http.put(`/api/v1/categories/${id}`, data)
 }
 
 const deleteData = id => {
-    return http.delete(`/categories/${id}`)
+    return http.delete(`/api/v1/categories/${id}`)
 }
 
 export default {
     getAll,
     getById,
-    storeData,
+    postData,
     updateData,
     deleteData
 }

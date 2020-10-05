@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 const SidebarMain = (props) => {
   return (
     <li className="nav-item">
-    <Link to={props.data.route} className="nav-link">
-        <i className={props.data.icon}></i>
-        <span className="menu-title">{ props.data.title }</span>
-    </Link>
-  </li>
+      <Link to={props.data.route} className="nav-link">
+          <i className={props.data.icon}></i>
+          <span className="menu-title">{ props.data.title }</span>
+      </Link>
+    </li>
   );
 }
 
@@ -32,9 +32,9 @@ const Sidebar = (props) => {
           </a>
           <div className="collapse" id="auth">
             <ul className="nav flex-column sub-menu">
-              <li className="nav-item"> <a className="nav-link" href="pages/samples/login.html"> Login </a></li>
-              <li className="nav-item"> <a className="nav-link" href="pages/samples/register.html"> Register </a></li>
-              <li className="nav-item"> <a className="nav-link" href="pages/samples/lock-screen.html"> Lockscreen </a></li>
+              <li className="nav-item"> <a className="nav-link" href="/"> Login </a></li>
+              <li className="nav-item"> <a className="nav-link" href="/"> Register </a></li>
+              <li className="nav-item"> <a className="nav-link" href="/"> Lockscreen </a></li>
             </ul>
           </div>
         </li>

@@ -24,9 +24,12 @@ const App = () => {
             <div className="content-wrapper">
               <Switch>
                 {
-                  sidebar.map((val, key) => (
-                    <Route exact path ={val.route} component={ val.component } key={key}/>
-                  ))
+                  sidebar.map((val, key) => ([
+                    <Route exact path={val.route} component={ val.component } key={key}/>,
+                    val.subMenu.length ? val.subMenu.map((v, k) => (
+                      <Route exact path={v.route} component={ v.component } key={k}/>
+                    )) : ''
+                  ]))
                 }
               </Switch>
             </div>
