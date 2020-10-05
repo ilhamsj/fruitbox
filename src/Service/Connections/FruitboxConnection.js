@@ -1,9 +1,8 @@
 import axios from 'axios'
 
 export default axios.create({
-    // baseURL: "https://fruit-service.herokuapp.com",
-    baseURL: "http://fruitbox.test/",
+    baseURL: "https://foodfood.herokuapp.com/",
     headers: {
         "Content-type": "application/json"
-    },
+    }
 })

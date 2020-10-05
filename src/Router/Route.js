@@ -32,13 +32,6 @@ const sidebar = [
       subMenu: []
     },
     {
-      title: 'Suppliers',
-      component: Supplier,
-      route: '/suppliers',
-      icon: 'mdi mdi-table menu-icon',
-      subMenu: []
-    },
-    {
       title: 'Order',
       component: Order,
       route: '/order',

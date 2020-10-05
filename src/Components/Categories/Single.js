@@ -12,7 +12,6 @@ const Single = (props) => {
         CategoryService.deleteData(props.data.id)
             .then(response => {
                 console.log(response)
-                // props.history.push("/categories");
             })
             .catch(err => {
                 console.error(err); 
@@ -20,16 +19,14 @@ const Single = (props) => {
     }
     
     return (
-        <tr>
-            <td>{ props.data.name }</td>
-            <td>{ props.data.created_at }</td>
-            <td>
-                <div className="template-demo">
-                    <button className="btn btn-warning" onClick={editData}>Edit</button>
-                    <button className="btn btn-danger" onClick={deleteData}>Delete</button>
-                </div>
-            </td>
-        </tr>
+        <div className="col-md-4 mb-4">
+            <h4>{props.data.name}</h4>
+            <img src={props.data.image}/>
+            <div className="template-demo">
+                <button className="btn btn-warning" onClick={editData}>Edit</button>
+                <button className="btn btn-danger" onClick={deleteData}>Delete</button>
+            </div>
+        </div>
     )
 }
 

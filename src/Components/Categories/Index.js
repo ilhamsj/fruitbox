@@ -48,20 +48,9 @@ const Index = () => {
                 <div className="col-md">
                     <div className="card">
                         <div className="card-body">
-                            <div className="card-title">{ categories.length } Category</div>
-                            <div className="table-responsive">
-                                <table id="recent-purchases-listing" className="table">
-                                    <thead>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Date</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        { listData(categories) }
-                                    </tbody>
-                                </table>
+                            <div className="card-title">Categories</div>
+                            <div className="row">
+                                { listData(categories) }
                             </div>
                         </div>
                     </div>
