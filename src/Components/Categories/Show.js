@@ -1,5 +1,4 @@
 import React from 'react'
-import CategoryService from '../../Service/CategoryService';
 
 const Show = (props) => {
 
@@ -8,13 +7,7 @@ const Show = (props) => {
     }
 
     const deleteData = (id) => {
-        CategoryService.deleteData(id)
-        .then(response => {
-            console.log(response)
-        })
-        .catch(err => {
-            console.error(err); 
-        })
+        alert(id)
     }
     
     return (
