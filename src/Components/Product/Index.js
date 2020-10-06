@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
-import CategoryService from '../../Service/CategoryService';
+import ProductService from '../../Service/ProductService';
+import Show from './Show';
 
 const Index = () => {
-    const [categories, setCategories] = useState([]);
+    const [products, setProducts] = useState([]);
 
     const retrieveData = () =>{
-        CategoryService.getAll()
+        ProductService.getAll()
             .then(response => {
-                setCategories(response.data.data)
+                setProducts(response.data.data)
+                console.log(response.data.data)
             })
             .catch(err => {
                 console.error(err); 
@@ -43,6 +45,11 @@ const Index = () => {
                         <div className="card-body">
                             <div className="card-title">Product</div>
                             <div className="row">
+                                {
+                                    products.map((val, key) => (
+                                        <Show data={val} key={key}/>
+                                    ))
+                                }
                             </div>
                         </div>
                     </div>

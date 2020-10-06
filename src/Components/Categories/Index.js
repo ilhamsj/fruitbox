@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import CategoryService from '../../Service/CategoryService';
-import Single from './Single';
+import Show from './Show';
 
 const Index = () => {
     const [categories, setCategories] = useState([]);
@@ -19,12 +19,6 @@ const Index = () => {
     useEffect(() => {
         retrieveData();
     }, [])
-
-    const listData = (data) => {
-        return data.map((val, key) => {
-            return <Single data={val} key={key}/>;
-        })
-    }
 
     return (
         <div>
@@ -50,7 +44,11 @@ const Index = () => {
                         <div className="card-body">
                             <div className="card-title">Categories</div>
                             <div className="row">
-                                { listData(categories) }
+                                {
+                                    categories.map((val, key) => (
+                                        <Show data={val} key={key}/>
+                                    ))
+                                }
                             </div>
                         </div>
                     </div>
