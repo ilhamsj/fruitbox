@@ -4,8 +4,8 @@ import ImgbbService from '../../Service/ImgbbService';
 
 const Loading = () => {
     return(
-        <div class="spinner-border" role="status">
-            <span class="sr-only">Loading...</span>
+        <div className="spinner-border" role="status">
+            <span className="sr-only">Loading...</span>
         </div>
     )
 }
@@ -40,7 +40,7 @@ const Create = (props) => {
         .then(res => {
             console.log(res)
             var image_link = res.data.data.display_url; 
-            setData({...data, ['image']: image_link});
+            setData({...data, 'image': image_link});
             setLoading(false)
         })
         .catch(err => {
