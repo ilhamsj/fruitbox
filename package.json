@@ -16,6 +16,7 @@
     "react-images-upload": "^1.2.8",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
+    "react-toastify": "^6.0.9",
     "toastr": "^2.1.4"
   },
   "scripts": {

@@ -1,11 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import CategoryService from '../../Service/CategoryService';
 import ImgbbService from '../../Service/ImgbbService';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { isArray } from 'jquery'
 
 const Loading = () => {
-    return(
+    return (
         <div className="spinner-border" role="status">
             <span className="sr-only">Loading...</span>
+        </div>
+    )
+}
+
+const ValidationFeedback = (props) => {
+    return (
+        <div className="valid-feedback">
+            { props.message }
         </div>
     )
 }
@@ -52,14 +63,21 @@ const Create = (props) => {
         event.preventDefault();
 
         CategoryService.postData(data)
-        .then(response => {
-            console.log(response)
-            props.history.push("/categories");
-        })
-        .catch(err => {
-            console.error(err.response.data); 
-            alert(err.response.data)
-        })
+            .then(response => {
+                console.log(response);
+                toast.success("Wow so easy !")
+                props.history.push("/categories");
+            })
+            .catch(err => {
+                var errorMes = Object.entries(err.response.data);
+                errorMes.map((value, k) => (
+                    value.map(val => (
+                        isArray(val) ? val.map(v => (
+                            toast.error(v)
+                        )) : console.log(val)
+                    ))
+                ))
+            })
     }
 
     useEffect(() => {
@@ -68,6 +86,7 @@ const Create = (props) => {
 
     return (
         <div className="row">
+            <ToastContainer/>
             <div className="col-md">
                 <div className="card">
                     <div className="card-body">
@@ -76,6 +95,7 @@ const Create = (props) => {
                             <div className="form-group">
                                 <label>Name</label>
                                 <input name="name" type="text" className="form-control" value={data.name} onChange={handleInputChane}/>
+                                <ValidationFeedback message="Wajib diisi"/>
                             </div>
                             
                             <div className="form-group">

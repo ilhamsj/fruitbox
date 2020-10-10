@@ -12,8 +12,16 @@ import Footer from './Components/Footer';
 
 import { sidebar } from './Router/Route';
 
-const App = () => {
+const AppSidebar = (props) => {
+  return props.sidebar.map((val, key) => ([
+    <Route exact path={val.route} component={ val.component } key={key}/>,
+    val.subMenu.length ? val.subMenu.map((v, k) => (
+      <Route exact path={v.route} component={ v.component } key={k}/>
+    )) : ''
+  ]))
+}
 
+const App = () => {
   return (
     <Router>
       <div className="container-scroller">
@@ -23,14 +31,7 @@ const App = () => {
           <div className="main-panel">
             <div className="content-wrapper">
               <Switch>
-                {
-                  sidebar.map((val, key) => ([
-                    <Route exact path={val.route} component={ val.component } key={key}/>,
-                    val.subMenu.length ? val.subMenu.map((v, k) => (
-                      <Route exact path={v.route} component={ v.component } key={k}/>
-                    )) : ''
-                  ]))
-                }
+                <AppSidebar sidebar={sidebar}/>
               </Switch>
             </div>
             <Footer/>
