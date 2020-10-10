@@ -1,0 +1,37 @@
+import React from "react";
+import {useSelector, useDispatch} from "react-redux";
+import { addTodo, delTodo } from "../store/actions/todoAction";
+
+const TodoApp= () => {
+  const todos = useSelector(state => state.todoReducer.todos);
+  const dispatch = useDispatch();
+  
+  const addNewTodo = () => {
+    const data = {
+      id:3,
+      title: "This is three",
+      complete: false
+    }
+    dispatch(addTodo(data))
+  }
+  
+  return(
+    <div>
+      <h1>Todo app</h1>
+      <button onClick={addNewTodo}>Add</button>
+      <ul>
+        {
+            todos.map((todo, k) =>
+                <li key={k}>
+                <p>{todo.title}</p>
+                <button onClick={() => dispatch(delTodo(todo.id))}>
+                    delete
+                </button>
+                </li>
+            )
+        }
+      </ul>
+    </div>
+  )
+}
+export default TodoApp;
