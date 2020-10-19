@@ -8,9 +8,10 @@ const TodoApp= () => {
   
   const addNewTodo = () => {
     const data = {
-      id:3,
-      title: "This is three",
-      complete: false
+      id: 1,
+      completed: false,
+      title: "delectus aut autem",
+      userId: 1
     }
     dispatch(addTodo(data))
   }
