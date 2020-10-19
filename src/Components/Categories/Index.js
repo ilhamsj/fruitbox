@@ -3,22 +3,16 @@ import { Link } from 'react-router-dom';
 import CategoryService from '../../Service/CategoryService';
 import Show from './Show';
 
-const Index = () => {
-    const [categories, setCategories] = useState([]);
+import {useSelector, useDispatch} from "react-redux";
+import { setCategory } from "../../store/actions/categoryAction";
 
-    const retrieveData = () =>{
-        CategoryService.getAll()
-            .then(response => {
-                setCategories(response.data.data)
-            })
-            .catch(err => {
-                console.error(err); 
-            })
-    }
+const Index = () => {
+    const categories = useSelector(state => state.categoryReducer.categories);
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        retrieveData();
-    }, [])
+        dispatch(setCategory())
+    }, [dispatch])
 
     return (
         <div>
