@@ -1,5 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Provider} from "react-redux";
+import store from "./store";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Template/vendors/mdi/css/materialdesignicons.min.css'
@@ -15,6 +17,7 @@ import { sidebar } from './Router/Route';
 const App = () => {
 
   return (
+  <Provider store={store}>
     <Router>
       <div className="container-scroller">
         <Header/>
@@ -38,6 +41,7 @@ const App = () => {
         </div>
       </div>
     </Router>
+  </Provider>
   )
 }
 
