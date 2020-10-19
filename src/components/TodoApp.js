@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {useSelector, useDispatch} from "react-redux";
-import { addTodo, delTodo } from "../store/actions/todoAction";
+import { addTodo, delTodo, setTodo } from "../store/actions/todoAction";
 
 const TodoApp= () => {
   const todos = useSelector(state => state.todoReducer.todos);
@@ -14,6 +14,10 @@ const TodoApp= () => {
     }
     dispatch(addTodo(data))
   }
+
+  useEffect(() => {
+    dispatch(setTodo())
+  }, [dispatch])
   
   return(
     <div>
