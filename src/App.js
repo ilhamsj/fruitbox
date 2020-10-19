@@ -2,13 +2,13 @@ import React from "react";
 import { Provider} from "react-redux";
 
 import store from "./store";
-import TodoApp from './components/TodoApp'
+import Category from "./components/Category";
 
 const App = () => {
   return (
     <Provider store={store}>
       <div>
-        <TodoApp/>
+        <Category/>
       </div>
     </Provider>
   )
