@@ -7,9 +7,7 @@ import Category from "./components/Category";
 const App = () => {
   return (
     <Provider store={store}>
-      <div>
-        <Category/>
-      </div>
+      <Category/>
     </Provider>
   )
 }
