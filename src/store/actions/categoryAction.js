@@ -1,4 +1,4 @@
-import axios from "axios"
+import categoryService from "../../Service/CategoryService"
 import { SET, ADD, DELETE } from './types'
 
 export const addCategory = data => {
@@ -8,16 +8,22 @@ export const addCategory = data => {
     })
 }
 
-export const deleteCategory = data => {
-    return ({
-        type: DELETE,
-        payload: data
-    })
+export const deleteCategory = data => async dispatch => {
+    try {
+        const res = await categoryService.deleteData(data);
+        console.log(res)
+        dispatch({
+            type: DELETE,
+            payload: data
+        })
+    } catch (error) {
+        console.log(error)
+    }
 }
 
 export const setCategory = () => async dispatch => {
     try {
-        const res = await axios.get(`https://foodfood.herokuapp.com/api/v1/categories`)
+        const res = await categoryService.getAll()
         dispatch({
             type: SET,
             payload: res.data.data

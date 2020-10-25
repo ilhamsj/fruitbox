@@ -14,7 +14,7 @@ const categoryReducer = (state = initialState, action) => {
     case ADD:
       return {...state, categories: [...state.categories, payload]}
     case DELETE:
-      return {...state, categories: state.categories.filter(todo => todo.id !== payload)}
+      return {...state, categories: state.categories.filter(category => category.uuid !== payload)}
     default:
       return {...state }
   }

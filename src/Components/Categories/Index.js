@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom';
-import CategoryService from '../../Service/CategoryService';
 import Show from './Show';
 
 import {useSelector, useDispatch} from "react-redux";
